@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "732501910873",
+    "project_id": "distan-64e2e",
+    "storage_bucket": "distan-64e2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732501910873:android:9bbf5ed5fa4cd9166c5848",
+        "android_client_info": {
+          "package_name": "com.dinaspertanian.distan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732501910873-9onmajc21ju4amhnmcmmbdirqbv0vlbr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dinaspertanian.distan",
+            "certificate_hash": "be5fd91e8c275835fae4f540643abd5c008ad30b"
+          }
+        },
+        {
+          "client_id": "732501910873-9e7uo0idbkat4mss899voi583ikpfbf3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdQm1yJYXU71tEmotGMzFSjgzs0JlBq1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732501910873-9e7uo0idbkat4mss899voi583ikpfbf3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
