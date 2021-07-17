@@ -4,7 +4,7 @@ import { Picker } from '@react-native-picker/picker';
 import { kembali } from '../../../assets'
 
 
-export class IsiSawah extends Component {
+export class EditSawah extends Component {
     state = {
 		satuIrigasi:'',
 		duaIrigasi:'',
@@ -130,8 +130,8 @@ export class IsiSawah extends Component {
                     </View>
                     <View style={{alignItems:'flex-end'}}>
                         <TouchableOpacity style={styles.inputan} onPress={this.Simpan}>
-                        <Text style={{color:'white'}}>
-                                Simpan
+                            <Text style={{color:'white'}}>
+                                Simpan Perubahan
                             </Text>
                         </TouchableOpacity>
                     </View>
@@ -203,10 +203,8 @@ const styles = StyleSheet.create({
         height: 30,
         justifyContent:'center',
         alignItems:'center',
+        width: 150,
     }
 })
 
-export default IsiSawah
-
-
-
+export default EditSawah

@@ -3,12 +3,12 @@ import {StyleSheet ,Text,View,Image,TouchableOpacity} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import {Login,Splash,Perencanaan,Pertanian} from '../pages'
-import { AgendaPertanian, HomePertanian, StoragePertanian, DataSawah, IsiSawah, Dynamicpdf } from '../pages/Pertanian';
+import { AgendaPertanian, HomePertanian, StoragePertanian, DataSawah, IsiSawah, Dynamicpdf, EditSawah } from '../pages/Pertanian';
 import {HomePertenakan,AgendaPertenakan,StoragePertenakan} from '../pages/Pertenakan';
 import {IconHomePerencanaanAktif,IconAgendaPerencaanaan,IconStoragePerencanaan} from '../assets';
 import {HomePerkebunan,AgendaPerkebunan,StoragePerkebunan} from '../pages/Perkebunan';
 import {HomePerencanaan, AgendaPerencanaan, StoragePerencanaan } from '../pages/Perencanaan';
-
+import {Picker} from '../components'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -120,6 +120,8 @@ const Router = () => {
 		<Stack.Screen name="DataSawah" component={DataSawah} options={{title: 'Data Dinas Pertanian',headerStyle:{backgroundColor:'#4CAF50'},headerTintColor: 'white',}}/>
 		<Stack.Screen name="IsiSawah" component={IsiSawah} options={{title: 'Form Input Data',headerStyle:{backgroundColor:'#4CAF50'},headerTintColor: 'white',}}/>
 		<Stack.Screen name="Dynamicpdf" component={Dynamicpdf} options={{headerShown: false}}/>
+		<Stack.Screen name="Picker" component={Picker} options={{headerShown: false}}/>
+		<Stack.Screen name="EditSawah" component={EditSawah} options={{title: 'Form Edit Data',headerStyle:{backgroundColor:'#4CAF50'},headerTintColor: 'white',}}/>
     </Stack.Navigator>
 
 	)

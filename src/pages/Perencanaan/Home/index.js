@@ -60,12 +60,13 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems:'center',
         padding:15,
-        backgroundColor: 'green',
+        backgroundColor: '#4CAF50',
         paddingHorizontal:30,
 
 	},
 	footer: {
-	
+		flex : 1,
+		backgroundColor:'#FCF9F9'
 	},
 	logo: {	
         justifyContent: 'center',

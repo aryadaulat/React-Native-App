@@ -68,11 +68,11 @@ export default class DataSawah extends Component {
                         </Text>
                     </TouchableOpacity>      
                     </View>
-                    <View style={styles.kotakTombol}>
+                    <TouchableOpacity style={styles.kotakTombol} onPress={()=>this.props.navigation.navigate('EditSawah')}>
                         <Text>
                             Edit Data
                         </Text>   
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <Table style={{marginHorizontal:25, marginTop:30}} borderStyle={{borderWidth: 1}}>
                     <Row data={state.tableHead} flexArr={[1, 3, 1]} style={styles.head} textStyle={styles.text2}/>
@@ -108,6 +108,7 @@ const styles = StyleSheet.create({
     },
     Footer :{
         flex : 0.84,
+        backgroundColor:'#FCF9F9'
            
     },
     text : {

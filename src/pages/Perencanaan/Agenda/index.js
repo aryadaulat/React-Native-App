@@ -3,6 +3,7 @@ import { Dimensions, StyleSheet, Text, View, ScrollView, TouchableOpacity,FlatLi
 import firestore from '@react-native-firebase/firestore';
 import Modal from 'react-native-modal';
 import {InputData} from '../../../components'
+import { LogBox } from 'react-native';
 
 const {width} = Dimensions.get('screen');
 const {height} = Dimensions.get('screen');
@@ -32,29 +33,29 @@ const Calender = () => {
         }
 		var date = new Date().getDate()
 		var month = new Date().getMonth()
-        if(month==1){
+        if(month==0){
 			month="Januari"
-		}else if(month==2){
+		}else if(month==1){
             month="Febuari"
-        }else if(month==3){
+        }else if(month==2){
             month="Maret"
-        }else if(month==4){
+        }else if(month==3){
             month="April"
-        }else if(month==5){
+        }else if(month==4){
             month="Mei"
-        }else if(month==6){
+        }else if(month==5){
             month="Juni"
-        }else if(month==7){
+        }else if(month==6){
             month="Juli"
-        }else if(month==8){
+        }else if(month==7){
             month="Agustus"
-        }else if(month==9){
+        }else if(month==8){
             month="September"
-        }else if(month==10){
+        }else if(month==9){
             month="Oktober"
-        }else if(month==11){
+        }else if(month==10){
             month="November"
-        }else if(month==12){
+        }else if(month==11){
             month="Desember"
         }
 		var year = new Date().getFullYear()
@@ -133,6 +134,7 @@ class AgendaPerencanaan extends Component {
 	componentDidMount() {
 		// this.getData();
 		this.getDataCollection();
+		LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 	}
 	
 	getData = async ()=>{ 
@@ -186,22 +188,7 @@ class AgendaPerencanaan extends Component {
 		)
 	}
 
-	ViewToday=()=>{
-		useEffect(() =>{
-			var date = new Date().getDate()
-			var month = new Date().getMonth()
-		
-			var year = new Date().getFullYear()
-			
-		},[])
-		return (
-			this.setState({
-				[currentDate] : date+month+year
-			})
 
-	
-		)
-	}
 	render() {
     return (
         <View style={styles.container}>
@@ -221,15 +208,17 @@ class AgendaPerencanaan extends Component {
 {/*                     
 								{this.ViewToday()} */}
 								<FlatList data={this.state.dataTampil} 
+								horizontal
 								 renderItem={({item,index}) =>{
 
 									console.log('date item = ',  item.Tanggal);
-						console.log('date state = ',  this.state.currentDate);
-									if(item.Tanggal==this.state.currentDate){
+									console.log('date state = ',  this.state.currentDate);
+									if(item.Tanggal===this.state.currentDate){
+										return (
 										<TouchableOpacity style={styles.tombo2}>
-			<View style={{flexDirection:'row'}}>
+										<View style={{flexDirection:'row'}}>
 								<View style={styles.kotak} />
-								<View style={styles.kegiatan}>
+								<View >
 									<Text>
 									{item.Judul}
 								</Text>
@@ -242,17 +231,17 @@ class AgendaPerencanaan extends Component {
 								</View>
 								</View>
 		</TouchableOpacity>
+										)
 									}else
 								{
-									<View>
-										<Text>Anjing</Text>
-									</View>
+									return false;
 								}
 								
 								 }
 								 
-								 
-								}keyExtractor={item => item.id}/>
+								}
+								// keyExtractor={item => item.id}
+								/>
                     
                 </View>
                 </ScrollView>
@@ -263,7 +252,7 @@ class AgendaPerencanaan extends Component {
             </Text>
 						
             <ScrollView >						
-										<FlatList
+							<FlatList
 								data={this.state.dataTampil}
 							renderItem={({item,index}) =>  <TouchableOpacity style={styles.tombo2}>
 								<View style={{flexDirection:'row'}}>
@@ -287,7 +276,7 @@ class AgendaPerencanaan extends Component {
 								</View>
 								</View>
 							</TouchableOpacity>}
-								keyExtractor={item => item.id}
+								// keyExtractor={item => item.id}
 							/>
              
             </ScrollView>

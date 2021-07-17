@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
 	},
 	middle : {
 		flex:1,
-		backgroundColor:'#E5E5E5'
+		backgroundColor:'#FCF9F9'
 	},
 	kotaksearch:{
 		flexDirection: 'row',
